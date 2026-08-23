@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="光影 | 独立摄影师个人影像展示平台">
+    <title>光影 - 摄影作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">光影</div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#portfolio">作品</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 Hero 区域 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">光塑造轮廓，影赋予层次</h1>
+            <p class="hero-subtitle">世间所有动人的瞬间，都藏在光影交错之间</p>
+            <a href="#portfolio" class="cta-button">浏览作品</a>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- 关于摄影师 -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>关于光影</h2>
+                    <p>「光影」摄影作品网站，是独立摄影师个人影像展示平台。深耕人像写真、纪实抓拍、商业静物、环境氛围感拍摄，擅长利用自然光影构建画面情绪，弱化刻意摆拍，追求自然、有故事感的视觉表达。</p>
+                    <p>镜头不止记录样貌，更承载情绪、回忆与故事。我们相信好的摄影作品拥有长久生命力，不因时间褪色。</p>
+                    <p>本站收录历年精选原创摄影作品，完整呈现拍摄风格、创作思路与成片质感，欢迎浏览作品集、交流创作、预约拍摄合作。</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>800+</h3>
+                        <p>精选作品</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>创作风格</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100+</h3>
+                        <p>满意客户</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>精选作品</h2>
+            
+            <!-- 分类筛选 -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="portrait">人像写真</button>
+                <button class="filter-btn" data-filter="documentary">纪实抓拍</button>
+                <button class="filter-btn" data-filter="commercial">商业静物</button>
+                <button class="filter-btn" data-filter="landscape">环境氛围</button>
+            </div>
+
+            <!-- 作品网格 -->
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- 作品项目会通过 JavaScript 插入 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 灯箱弹窗 -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <button class="lightbox-prev" id="lightboxPrev">❮</button>
+        <button class="lightbox-next" id="lightboxNext">❯</button>
+    </div>
+
+    <!-- 服务特色 -->
+    <section class="services">
+        <div class="container">
+            <h2>服务范围</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>人像写真</h3>
+                    <p>捕捉自然表情，展现独特气质</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>纪实抓拍</h3>
+                    <p>记录生活中的真挚瞬间</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-box"></i>
+                    <h3>商业静物</h3>
+                    <p>产品拍摄与商业合作</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-image"></i>
+                    <h3>环境氛围</h3>
+                    <p>营造画面情绪与故事感</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>联系我</h2>
+            <p class="contact-intro">对我的作品感兴趣？欢迎交流创作、预约拍摄合作</p>
+            
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="你的名字" required>
+                <input type="email" placeholder="你的邮箱" required>
+                <textarea placeholder="留言内容" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">发送留言</button>
+            </form>
+
+            <div class="contact-info">
+                <p>📧 邮箱：<a href="mailto:contact@example.com">contact@example.com</a></p>
+                <p>📱 微信：guangying_photo</p>
+                <p>📍 地点：中国</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+                <a href="#" title="小红书"><i class="fas fa-book"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 光影摄影作品集. All rights reserved.</p>
+            <p>每一张照片都是一个故事，每一次快门都是一份承诺。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
