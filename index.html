@@ -17,12 +17,24 @@
                 <li><a href="#home">首页</a></li>
                 <li><a href="#about">关于</a></li>
                 <li><a href="#portfolio">作品</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#booking">预约</a></li>
+                <li><a href="#reviews">评价</a></li>
                 <li><a href="#contact">联系</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="navbar-right">
+                <button class="theme-toggle" id="themeToggle" title="切换主题">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索作品...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -32,7 +44,10 @@
         <div class="hero-content">
             <h1 class="hero-title">光塑造轮廓，影赋予层次</h1>
             <p class="hero-subtitle">世间所有动人的瞬间，都藏在光影交错之间</p>
-            <a href="#portfolio" class="cta-button">浏览作品</a>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="cta-button">浏览作品</a>
+                <a href="#booking" class="cta-button cta-secondary">立即预约</a>
+            </div>
         </div>
         <div class="hero-bg"></div>
     </section>
@@ -95,31 +110,126 @@
         <button class="lightbox-next" id="lightboxNext">❯</button>
     </div>
 
-    <!-- 服务特色 -->
-    <section class="services">
+    <!-- 服务套餐 -->
+    <section id="services" class="services">
         <div class="container">
-            <h2>服务范围</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-heart"></i>
-                    <h3>人像写真</h3>
-                    <p>捕捉自然表情，展现独特气质</p>
+            <h2>服务套餐</h2>
+            <p class="section-intro">选择最适合你的服务方案，享受专业的摄影服务</p>
+            
+            <div class="services-grid" id="servicesGrid">
+                <!-- 服务卡片会通过 JavaScript 插入 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 在线预约 -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2>在线预约</h2>
+            <p class="section-intro">选择你的预约时间和服务类型</p>
+            
+            <div class="booking-container">
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label>服务类型 *</label>
+                        <select id="serviceType" required>
+                            <option value="">请选择服务类型</option>
+                            <option value="portrait">人像写真</option>
+                            <option value="documentary">纪实抓拍</option>
+                            <option value="commercial">商业静物</option>
+                            <option value="landscape">环境氛围</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>预约日期 *</label>
+                        <input type="date" id="bookingDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>预约时间 *</label>
+                        <select id="bookingTime" required>
+                            <option value="">请选择时间</option>
+                            <option value="09:00">09:00 - 10:00</option>
+                            <option value="10:00">10:00 - 11:00</option>
+                            <option value="11:00">11:00 - 12:00</option>
+                            <option value="14:00">14:00 - 15:00</option>
+                            <option value="15:00">15:00 - 16:00</option>
+                            <option value="16:00">16:00 - 17:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>你的名字 *</label>
+                        <input type="text" id="clientName" placeholder="请输入你的名字" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>联系电话 *</label>
+                        <input type="tel" id="clientPhone" placeholder="请输入你的电话号码" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>邮箱地址 *</label>
+                        <input type="email" id="clientEmail" placeholder="请输入你的邮箱" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>特殊需求</label>
+                        <textarea id="clientNotes" placeholder="请说明你的特殊需求和拍摄想法" rows="4"></textarea>
+                    </div>
+
+                    <div class="booking-price">
+                        <span>预计费用：</span>
+                        <span id="estimatedPrice" class="price">¥0</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">确认预约</button>
+                </form>
+
+                <div class="booking-info">
+                    <div class="info-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>灵活的时间</h3>
+                        <p>选择最适合你的拍摄时间，支持周一至周日预约</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>透明的价格</h3>
+                        <p>清晰的价格体系，预约时即刻显示预计费用</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-bell"></i>
+                        <h3>预约提醒</h3>
+                        <p>预约成功后我们会通过邮箱和电话向你确认</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-camera"></i>
-                    <h3>纪实抓拍</h3>
-                    <p>记录生活中的真挚瞬间</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-box"></i>
-                    <h3>商业静物</h3>
-                    <p>产品拍摄与商业合作</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-image"></i>
-                    <h3>环境氛围</h3>
-                    <p>营造画面情绪与故事感</p>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户评价 -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>客户评价</h2>
+            <p class="section-intro">来看看我们的客户怎么说</p>
+            
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- 评价卡片会通过 JavaScript 插入 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 邮件订阅 -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>订阅我们的作品更新</h2>
+                <p>获得最新的摄影作品、行业动态和特别优惠</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="输入你的邮箱地址" required>
+                    <button type="submit" class="submit-btn">订阅</button>
+                </form>
             </div>
         </div>
     </section>
